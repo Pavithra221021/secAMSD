@@ -2,6 +2,8 @@ const express = require('express');
 const serverless = require("serverless-http");
 const app = express();
 app.use(express.json());
+app.set("view engine", "ejs");
+app.set("views", "./views");
 
 let books = [
   { id: 1, title: 'micky', author: 'micky' },
@@ -25,3 +27,4 @@ app.get('/books', (req, res) => {
 
 
 module.exports = app;
+
